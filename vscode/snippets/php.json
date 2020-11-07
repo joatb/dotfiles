@@ -1,0 +1,8 @@
+// in file 'Code/User/snippets/php.json'
+{
+  "For Loop": {
+    "prefix": ["funComment", "comment"],
+    "body": ["$BLOCK_COMMENT_START\n* $1\n* PRE: $2\n* POST: $3\n$BLOCK_COMMENT_END"],
+    "description": "Function Comment." 
+  }
+}
