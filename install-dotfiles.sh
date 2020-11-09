@@ -85,3 +85,19 @@
 	then
         echoColor "\n[Not] Visual Studio Code" yellow 
     fi
+
+# install zsh
+    read -p "Install ohmyzsh: default[YySs]"$'\n' -n 1 -r
+    if [[ $REPLY =~ ^[YySs]$ || $REPLY = "" ]]
+    then
+    	sudo $(currentDistroPkgManager install) curl zsh
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+        #DotFiles
+	    rm ~/.zshrc
+	    ln -svf $folderLocation/.zshrc ~/
+	    ln -svf $folderLocation/.oh-my-zsh/themes/joatb.zsh-theme ~/.oh-my-zsh/themes/
+	    echoColor "\n[Ok] zsh" green  
+    else
+        echoColor "\n[Not] zsh" yellow 
+    fi
