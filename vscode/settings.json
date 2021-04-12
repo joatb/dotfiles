@@ -1,8 +1,11 @@
 {
-    "php.validate.executablePath": "/opt/lampp/bin/php",
+    "php.validate.executablePath": "C:/laragon/bin/php/php-7.2.19-Win32-VC15-x64/php.exe",
     "workbench.colorTheme": "Monokai ST3",
-    "workbench.iconTheme": "Monokai Classic Icons",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 13.8,
     "workbench.tree.renderIndentGuides": "always",
-    "workbench.tree.indent": 12
+    "workbench.tree.indent": 12,
+    "editor.minimap.enabled": false,
+    "workbench.editor.showTabs": false,
+    "editor.fontFamily": "Ubuntu Mono, Consolas, 'Courier New', monospace"
 }
