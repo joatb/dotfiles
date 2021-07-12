@@ -1,0 +1,26 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "Jotaa dotfiles",
+  "main": "install-dotfiles.js",
+  "scripts": {
+    "start": "node install-dotfiles.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joatb/dotfiles.git"
+  },
+  "keywords": [
+    "dotfiles"
+  ],
+  "author": "Jotaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joatb/dotfiles/issues"
+  },
+  "homepage": "https://github.com/joatb/dotfiles#readme",
+  "dependencies": {
+    "prompt": "^1.1.0"
+  }
+}
