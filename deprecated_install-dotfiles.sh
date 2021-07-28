@@ -1,4 +1,11 @@
 #!/bin/bash
+
+###############
+##
+## DEPRECATED: NOW USING NODE
+##
+###############
+
 # dotfiles folder location
     folderLocation=$(pwd)
 

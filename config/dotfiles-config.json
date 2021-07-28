@@ -1,0 +1,59 @@
+{
+    "ohmyzsh": 
+    {
+        "os":[
+            "debian",
+            "ubuntu",
+            "arch",
+            "manjaro"
+        ],
+        "commands": [
+            "sudo {install} wget zsh",
+            "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | bash",
+            "rm -rf ~/.zshrc",
+            "ln -svf {gitRepoFullPath}/dotfiles/.zshrc ~/",
+            "ln -svf {gitRepoFullPath}/dotfiles/.oh-my-zsh/themes/joatb.zsh-theme ~/.oh-my-zsh/themes/"
+        ]
+    },
+    "vscode-arch-installation":{
+        "os":[
+            "arch",
+            "manjaro"
+        ],
+        "commands":[
+            "sudo {install} code",
+            "sudo -k"
+        ]
+    },
+    "vscode-debian-installation":{
+        "os":[
+            "debian",
+            "ubuntu"
+        ],
+        "commands":[
+            "sudo {install} curl",
+            "curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg",
+            "sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg",
+            "sudo sh -c 'echo deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main > /etc/apt/sources.list.d/vscode.list'",
+            "sudo apt-get install apt-transport-https",
+            "sudo apt-get update",
+            "sudo apt-get install code",
+            "sudo rm microsoft.gpg",
+            "sudo -k"
+        ]
+    },
+    "vscode-dotfiles":{
+        "os": [
+            "debian",
+            "ubuntu",
+            "arch",
+            "manjaro"
+        ],
+        "commands":[
+            "cat {gitRepoFullPath}/dotfiles/vscode/vscode_extensions.list | xargs -L 1 code --install-extension",
+            "ln -svf {gitRepoFullPath}/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json",
+            "rm -rf ~/.config/Code/User/snippets",
+            "ln -svf {gitRepoFullPath}/dotfiles/vscode/snippets/ ~/.config/Code/User/"
+        ]
+    }
+}

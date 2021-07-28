@@ -1,0 +1,32 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "Jotaa dotfiles",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joatb/dotfiles.git"
+  },
+  "keywords": [
+    "dotfiles"
+  ],
+  "author": "Jotaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joatb/dotfiles/issues"
+  },
+  "homepage": "https://github.com/joatb/dotfiles#readme",
+  "dependencies": {
+    "@types/node": "^16.3.2",
+    "colors": "^1.4.0",
+    "prompt": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/prompt": "^1.1.1"
+  }
+}
