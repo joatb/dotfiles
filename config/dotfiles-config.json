@@ -1,7 +1,6 @@
 {
-    "ohmyzsh": 
-    {
-        "os":[
+    "ohmyzsh": {
+        "os": [
             "debian",
             "ubuntu",
             "arch",
@@ -15,22 +14,22 @@
             "ln -svf {gitRepoFullPath}/dotfiles/.oh-my-zsh/themes/joatb.zsh-theme ~/.oh-my-zsh/themes/"
         ]
     },
-    "vscode-arch-installation":{
-        "os":[
+    "vscode-arch-installation": {
+        "os": [
             "arch",
             "manjaro"
         ],
-        "commands":[
+        "commands": [
             "sudo {install} code",
             "sudo -k"
         ]
     },
-    "vscode-debian-installation":{
-        "os":[
+    "vscode-debian-installation": {
+        "os": [
             "debian",
             "ubuntu"
         ],
-        "commands":[
+        "commands": [
             "sudo {install} curl",
             "curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg",
             "sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg",
@@ -42,18 +41,31 @@
             "sudo -k"
         ]
     },
-    "vscode-dotfiles":{
+    "vscode-dotfiles": {
         "os": [
             "debian",
             "ubuntu",
             "arch",
             "manjaro"
         ],
-        "commands":[
+        "commands": [
             "cat {gitRepoFullPath}/dotfiles/vscode/vscode_extensions.list | xargs -L 1 code --install-extension",
             "ln -svf {gitRepoFullPath}/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json",
             "rm -rf ~/.config/Code/User/snippets",
             "ln -svf {gitRepoFullPath}/dotfiles/vscode/snippets/ ~/.config/Code/User/"
+        ]
+    },
+    "fonts": {
+        "os": [
+            "ubuntu",
+            "debian",
+            "arch",
+            "manjaro"
+        ],
+        "commands": [
+            "sudo {install} unzip",
+            "mkdir -p ~/.local/share/fonts",
+            "find {gitRepoFullPath}/dotfiles/fonts -name '*.zip' | xargs -I{} unzip {} -d ~/.local/share/fonts '*.ttf'"
         ]
     }
 }
