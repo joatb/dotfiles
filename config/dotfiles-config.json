@@ -28,7 +28,7 @@
             "rustup override set stable",
             "rustup update stable",
             "sudo {install} cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3",
-            "cargo build --release",
+            "cargo build --release --manifest-path {gitRepoFullPath}/tmp/alacritty/Cargo.toml",
             "mkdir -p ${ZDOTDIR:-~}/.zsh_functions",
             "echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc",
             "cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty",
