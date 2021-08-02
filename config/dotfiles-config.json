@@ -1,14 +1,30 @@
 {
+    "ohmyzsh": {
+        "os": [
+            "debian",
+            "ubuntu",
+            "arch",
+            "manjaro"
+        ],
+        "commands": [
+            "sudo {install} wget zsh",
+            "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | bash",
+            "rm -rf ~/.zshrc",
+            "ln -svf {gitRepoFullPath}/dotfiles/.zshrc ~/",
+            "ln -svf {gitRepoFullPath}/dotfiles/.oh-my-zsh/themes/joatb.zsh-theme ~/.oh-my-zsh/themes/"
+        ]
+    },
     "alacritty-debian-ubuntu": {
         "os": [
             "debian",
             "ubuntu"
         ],
         "commands": [
-            "cd ~",
-            "git clone https://github.com/alacritty/alacritty.git",
+            "sudo rm -rf {gitRepoFullPath}/tmp/alacritty",
+            "git clone https://github.com/alacritty/alacritty.git {gitRepoFullPath}/tmp/alacritty",
             "cd ./alacritty",
-            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh -s -- -y",
+            "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.zshrc",
             "rustup override set stable",
             "rustup update stable",
             "sudo {install} cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3",
@@ -30,10 +46,11 @@
             "manjaro"
         ],
         "commands": [
-            "cd ~",
-            "git clone https://github.com/alacritty/alacritty.git",
+            "sudo rm -rf {gitRepoFullPath}/tmp/alacritty",
+            "git clone https://github.com/alacritty/alacritty.git {gitRepoFullPath}/tmp/alacritty",
             "cd ./alacritty",
-            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh -s -- -y",
+            "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.zshrc",
             "rustup override set stable",
             "rustup update stable",
             "sudo {install} cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon",
@@ -47,21 +64,6 @@
             "sudo update-desktop-database",
             "mkdir ~/.config/alacritty",
             "ln -svf {gitRepoFullPath}/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/"
-        ]
-    },
-    "ohmyzsh": {
-        "os": [
-            "debian",
-            "ubuntu",
-            "arch",
-            "manjaro"
-        ],
-        "commands": [
-            "sudo {install} wget zsh",
-            "wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | bash",
-            "rm -rf ~/.zshrc",
-            "ln -svf {gitRepoFullPath}/dotfiles/.zshrc ~/",
-            "ln -svf {gitRepoFullPath}/dotfiles/.oh-my-zsh/themes/joatb.zsh-theme ~/.oh-my-zsh/themes/"
         ]
     },
     "vscode-arch-installation": {
