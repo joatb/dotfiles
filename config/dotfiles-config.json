@@ -20,28 +20,24 @@
             "ubuntu"
         ],
         "commands": [
-            "sudo rm -rf {gitRepoFullPath}/tmp/alacritty",
-            "git clone https://github.com/alacritty/alacritty.git {gitRepoFullPath}/tmp/alacritty",
-            "cd ./alacritty",
-            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh -s -- -y",
-            "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.zshrc",
-            "rustup override set stable",
-            "rustup update stable",
+            "sudo {update}",
             "sudo {install} cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3",
-            "cargo build --release --manifest-path {gitRepoFullPath}/tmp/alacritty/Cargo.toml",
-            "mkdir -p ${ZDOTDIR:-~}/.zsh_functions",
-            "echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc",
-            "cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty",
-            "sudo cp target/release/alacritty /usr/local/bin",
-            "sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg",
-            "sudo desktop-file-install extra/linux/Alacritty.desktop",
-            "sudo update-desktop-database",
-            "mkdir ~/.config/alacritty",
-            "ln -svf {gitRepoFullPath}/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/"
         ]
     },
-    "alacritty-arch": {
+    "alacritty-arch-manjaro": {
         "os": [
+            "arch",
+            "manjaro"
+        ],
+        "commands": [
+            "sudo {update}",
+            "sudo {install} cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon"
+        ]
+    },
+    "alacritty": {
+        "os": [
+            "debian",
+            "ubuntu",
             "arch",
             "manjaro"
         ],
@@ -53,14 +49,13 @@
             "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.zshrc",
             "rustup override set stable",
             "rustup update stable",
-            "sudo {install} cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon",
-            "cargo build --release",
+            "cargo build --release --manifest-path {gitRepoFullPath}/tmp/alacritty/Cargo.toml",
             "mkdir -p ${ZDOTDIR:-~}/.zsh_functions",
             "echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc",
-            "cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty",
-            "sudo cp target/release/alacritty /usr/local/bin",
-            "sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg",
-            "sudo desktop-file-install extra/linux/Alacritty.desktop",
+            "cp {gitRepoFullPath}/tmp/alacritty/extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty",
+            "sudo cp {gitRepoFullPath}/tmp/alacritty/target/release/alacritty /usr/local/bin",
+            "sudo cp {gitRepoFullPath}/tmp/alacritty/extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg",
+            "sudo desktop-file-install {gitRepoFullPath}/tmp/alacritty/extra/linux/Alacritty.desktop",
             "sudo update-desktop-database",
             "mkdir ~/.config/alacritty",
             "ln -svf {gitRepoFullPath}/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/"
