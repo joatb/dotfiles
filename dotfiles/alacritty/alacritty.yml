@@ -23,7 +23,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -45,9 +45,9 @@
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 24
+    y: 24
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -61,7 +61,7 @@
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -102,55 +102,55 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: Ubuntu Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Ubuntu Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Ubuntu Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Ubuntu Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -312,6 +312,35 @@
   #
   #indexed_colors: []
 
+# Colors (Monokai Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#272822'
+    foreground: '#F8F8F2'
+
+  # Normal colors
+  normal:
+   black:   '#272822'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F8F8F2'
+
+  # Bright colors
+  bright:
+   black:   '#75715E'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F9F8F5'
+
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
@@ -357,7 +386,7 @@
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.8
 
 #selection:
   # This string contains all characters that are used as separators for
