@@ -44,9 +44,10 @@
         "commands": [
             "sudo rm -rf {gitRepoFullPath}/tmp/alacritty",
             "git clone https://github.com/alacritty/alacritty.git {gitRepoFullPath}/tmp/alacritty",
-            "cd ./alacritty",
+            "cd ./tmp/alacritty",
             "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh -s -- -y",
             "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.zshrc",
+            "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.bashrc",
             "rustup override set stable",
             "rustup update stable",
             "cargo build --release --manifest-path {gitRepoFullPath}/tmp/alacritty/Cargo.toml",
